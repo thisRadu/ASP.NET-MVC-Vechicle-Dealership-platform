@@ -1,0 +1,47 @@
+﻿@using Bazar.Models
+
+@{
+    CarModel car = Main.GetCarById(ViewBag.Id);
+}
+
+
+
+
+    <div class="container p-3 my-3 border bg-light text-center">
+
+        <img src="@car.Fotografia" alt="img" width="600" height="300" runat=server>
+
+    </div>
+    <div class="container p-3 my-3 border bg-light text-left">
+
+        <h3>@car.Marca @car.Modelul </h3>
+        <h2><b>@String.Format("{0:n0}", car.Pretul) Lei</b> </h2>
+        <br>
+
+        <div class="d-flex  align-items-left flex-wrap row">
+
+
+
+            <button class="btn btn-outline-dark mr-3">An Fabricatie: <b>@car.Anul</b></button>
+            <button class="btn btn-outline-dark mr-3">Caroserie: <b>@car.Caroseria</b></button>
+            <button class="btn btn-outline-dark mr-3">Volum motor: <b>@car.Volumul cm³</b></button>
+            <button class="btn btn-outline-dark mr-3">Putere: <b>@car.Puterea CP</b></button>
+            <button class="btn btn-outline-dark mr-3">Combustibil: <b>@car.Combustibilul</b></button>
+
+
+
+
+        </div>
+        <br>
+        <h4> Telefon: <b> @car.Contact </b></h4> <br>
+
+    </div>
+
+  <div class="container border bg-light text-left">
+
+    <h3>Descriere</h3> <br>
+    <h5>@car.Descriere</h5>
+
+    </div>
+
+

@@ -1,0 +1,57 @@
+﻿@model Bazar.Models.CarModel
+@using Bazar.Models
+@using (Html.BeginForm("SellCar", "Home", FormMethod.Post, new { @class = "form" }))
+{
+    SelectList img = Main.GetAllImagees();
+    <div class="container p-3 my-3 border bg-light text-left">
+
+        <div class="form-group">
+            <label for="Marca">Marca</label>
+            @Html.TextBoxFor(m => m.Marca, null, new { @class = "form-control", placeholder = "Marca:" })
+        </div>
+
+        <div class="form-group">
+            <label for="Model">Model</label>
+            @Html.TextBoxFor(m => m.Modelul, null, new { @class = "form-control", placeholder = "Model:" })
+        </div>
+
+        <div class="form-group">
+            <label for="Anul Fabricatiei">Anul</label>
+            @Html.TextBoxFor(m => m.Anul, null, new { @class = "form-control", placeholder = "Anul Fabricatiei" })
+        </div>
+        <div class="form-group">
+            <label for="Volumul">Volum Motor</label>
+            @Html.TextBoxFor(m => m.Volumul, null, new { @class = "form-control", placeholder = "Volum Motor" })
+        </div>
+        <div class="form-group">
+            <label for="Puterea">Putere</label>
+            @Html.TextBoxFor(m => m.Puterea, null, new { @class = "form-control", placeholder = "Putere:" })
+        </div>
+        <div class="form-group">
+            <label for="Combustibilul">Combustibil</label>
+            @Html.TextBoxFor(m => m.Combustibilul, null, new { @class = "form-control", placeholder = "Combustibil:" })
+        </div>
+        <div class="form-group">
+            <label for="Caroseria">Caroseria</label>
+            @Html.TextBoxFor(m => m.Caroseria, null, new { @class = "form-control", placeholder = "Caroseria:" })
+        </div>
+        <div class="form-group">
+            <label for="Fotografia">Fotografie</label>
+            @Html.DropDownListFor(m => m.Fotografia, img, "Select Image", new { @class = "form-control" })
+        </div>
+        <div class="form-group">
+            <label for="Descriere">Descriere</label>
+            @Html.TextBoxFor(m => m.Descriere, null, new { @class = "form-control", placeholder = "Descriere:" })
+        </div>
+        <div class="form-group">
+            <label for="Pretul">Pret</label>
+            @Html.TextBoxFor(m => m.Pretul, null, new { @class = "form-control", placeholder = "Pret:" })
+        </div>
+        <div class="form-group">
+            <label for="Contact">Contact</label>
+            @Html.TextBoxFor(m => m.Contact, null, new { @class = "form-control", placeholder = "Contact:" })
+        </div>
+
+        <input type="submit" class="btn btn-primary" value="Add" />
+    </div>
+}
