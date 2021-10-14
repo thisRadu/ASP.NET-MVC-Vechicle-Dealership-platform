@@ -1,0 +1,72 @@
+﻿@model Bazar.Models.CarModel
+@using Bazar.Models
+@using Microsoft.Extensions.Localization
+
+
+@inject IStringLocalizer<Resource> localizer
+@using (Html.BeginForm("SellCar", "Home", FormMethod.Post, new { @class = "form" }))
+{
+    SelectList img = Main.GetAllImagees();
+    <div class="container p-3 my-3 border bg-light text-left">
+        <h4 class="card-header">@localizer["Completeaza"]:</h4><br>
+        <div class="form-group">
+            <label for="Marca">@localizer["Marca"]</label>
+            @Html.TextBoxFor(m => m.Marca, null, new { @class = "form-control", placeholder = @localizer["Marca"] })
+            @Html.ValidationMessageFor(m => m.Marca, null, new { @class = "text-danger" })
+        </div>
+
+        <div class="form-group">
+            <label for="Model">@localizer["Model"]</label>
+            @Html.TextBoxFor(m => m.Modelul, null, new { @class = "form-control", placeholder = @localizer["Model"] })
+            @Html.ValidationMessageFor(m => m.Modelul, null, new { @class = "text-danger" })
+        </div>
+
+        <div class="form-group">
+            <label for="Anul Fabricatiei">@localizer["An"]</label>
+            @Html.TextBoxFor(m => m.Anul, null, new { @class = "form-control", placeholder = @localizer["An"] })
+            @Html.ValidationMessageFor(m => m.Anul, null, new { @class = "text-danger" })
+        </div>
+        <div class="form-group">
+            <label for="Volumul"> @localizer["Volum"]</label>
+            @Html.TextBoxFor(m => m.Volumul, null, new { @class = "form-control", placeholder = @localizer["Volum"] })
+            @Html.ValidationMessageFor(m => m.Volumul, null, new { @class = "text-danger" })
+        </div>
+        <div class="form-group">
+            <label for="Puterea"> @localizer["Putere"]</label>
+            @Html.TextBoxFor(m => m.Puterea, null, new { @class = "form-control", placeholder = @localizer["Putere"] })
+            @Html.ValidationMessageFor(m => m.Puterea, null, new { @class = "text-danger" })
+        </div>
+        <div class="form-group">
+            <label for="Combustibilul">@localizer["Combustibil"]</label>
+            @Html.TextBoxFor(m => m.Combustibilul, null, new { @class = "form-control", placeholder = @localizer["Combustibil"] })
+            @Html.ValidationMessageFor(m => m.Combustibilul, null, new { @class = "text-danger" })
+        </div>
+        <div class="form-group">
+            <label for="Caroseria">@localizer["Caroserie"]</label>
+            @Html.TextBoxFor(m => m.Caroseria, null, new { @class = "form-control", placeholder = @localizer["Caroserie"] })
+            @Html.ValidationMessageFor(m => m.Caroseria, null, new { @class = "text-danger" })
+        </div>
+        <div class="form-group">
+            <label for="Fotografia">@localizer["Fotografie"]</label>
+            @Html.DropDownListFor(m => m.Fotografia, img, "Select Image", new { @class = "form-control" })
+            @Html.ValidationMessageFor(m => m.Fotografia, null, new { @class = "text-danger" })
+        </div>
+        <div class="form-group">
+            <label for="Descriere"> @localizer["Descriere"]</label>
+            @Html.TextBoxFor(m => m.Descriere, null, new { @class = "form-control", placeholder = @localizer["Descriere"] })
+            @Html.ValidationMessageFor(m => m.Descriere, null, new { @class = "text-danger" })
+        </div>
+        <div class="form-group">
+            <label for="Pretul">@localizer["Pret"]</label>
+            @Html.TextBoxFor(m => m.Pretul, null, new { @class = "form-control", placeholder = @localizer["Pret"] })
+            @Html.ValidationMessageFor(m => m.Pretul, null, new { @class = "text-danger" })
+        </div>
+        <div class="form-group">
+            <label for="Contact">@localizer["Contact"]</label>
+            @Html.TextBoxFor(m => m.Contact, null, new { @class = "form-control", placeholder = @localizer["Contact"] })
+            @Html.ValidationMessageFor(m => m.Contact, null, new { @class = "text-danger" })
+        </div>
+
+        <input type="submit" class="btn btn-primary" value="Add" />
+    </div>
+}
